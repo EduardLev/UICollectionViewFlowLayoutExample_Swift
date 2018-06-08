@@ -2,6 +2,7 @@
 //  AppDelegate.swift
 //  UICollectionViewFlowLayoutExample_Swift
 //
+//  Based on the Objective-C project by Ash Furrow 2013-02-05
 //  Created by Eduard Lev on 6/8/18.
 //  Copyright © 2018 Eduard Levshteyn. All rights reserved.
 //
@@ -13,9 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
         // Override point for customization after application launch.
+        let viewController = AFViewController()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.navigationBar.barStyle = .black
+        self.window?.rootViewController = navigationController
+        self.window?.makeKeyAndVisible()
         return true
     }
 
